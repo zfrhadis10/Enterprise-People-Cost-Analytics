@@ -1,9 +1,18 @@
 # 💼 Enterprise People Cost & Workforce Expenditure Analytics (2023–2024)
 ### End-to-End HR Cost Control, Data Pipeline & Budget Variance Monitoring System
 
+![Power BI](https://img.shields.io/badge/Power_BI-Dashboard-F2C811?style=flat-square&logo=powerbi&logoColor=black)
+![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=flat-square&logo=python&logoColor=white)
+![DAX](https://img.shields.io/badge/DAX-Financial_Modeling-217346?style=flat-square&logo=microsoftexcel&logoColor=white)
+![Data Analytics](https://img.shields.io/badge/Data_Analytics-Insights-4B8BBE?style=flat-square)
+![People Analytics](https://img.shields.io/badge/People_Analytics-HR-6A4C93?style=flat-square)
+![HR Analytics](https://img.shields.io/badge/HR_Analytics-Workforce-00A896?style=flat-square)
+![Star Schema](https://img.shields.io/badge/Star_Schema-Data_Model-073B4C?style=flat-square)
+![ETL Pipeline](https://img.shields.io/badge/ETL_Pipeline-Pandas_%2F_NumPy-F77F00?style=flat-square)
+![Dashboard](https://img.shields.io/badge/Dashboard-Executive-118AB2?style=flat-square)
+
 **Repository Name:** `enterprise-people-cost-analytics`
 **Repository Description:** End-to-end People Cost & Workforce Expenditure Analytics platform built with Python & Power BI. Features DAX financial variance modeling, Star Schema data architecture, and executive budget optimization insights across 1,700+ payroll records.
-**Topics / Tags:** `power-bi` | `python` | `dax` | `data-analytics` | `people-analytics` | `hr-analytics` | `star-schema` | `etl-pipeline` | `dashboard`
 
 ---
 
