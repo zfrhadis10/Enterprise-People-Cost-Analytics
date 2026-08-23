@@ -3,13 +3,15 @@
 
 ![Power BI](https://img.shields.io/badge/Power_BI-Dashboard-F2C811?style=flat-square&logo=powerbi&logoColor=black)
 ![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=flat-square&logo=python&logoColor=white)
-![DAX](https://img.shields.io/badge/DAX-Financial_Modeling-217346?style=flat-square&logo=microsoftexcel&logoColor=white)
+![DAX](https://img.shields.io/badge/DAX-Financial_Metrics-217346?style=flat-square&logo=microsoftexcel&logoColor=white)
 ![Data Analytics](https://img.shields.io/badge/Data_Analytics-Insights-4B8BBE?style=flat-square)
 ![People Analytics](https://img.shields.io/badge/People_Analytics-HR-6A4C93?style=flat-square)
 ![HR Analytics](https://img.shields.io/badge/HR_Analytics-Workforce-00A896?style=flat-square)
-![Star Schema](https://img.shields.io/badge/Star_Schema-Data_Model-073B4C?style=flat-square)
 ![Data Cleaning](https://img.shields.io/badge/Data_Cleaning-Pandas_%2F_NumPy-F77F00?style=flat-square)
 ![Dashboard](https://img.shields.io/badge/Dashboard-Executive-118AB2?style=flat-square)
+
+**Repository Name:** `enterprise-people-cost-analytics`
+**Repository Description:** People Cost & Workforce Expenditure Analytics built with Python & Power BI. Features DAX financial variance measures and executive budget optimization insights across 1,700+ payroll records.
 
 ---
 
@@ -21,8 +23,7 @@ Processing over **1,728 aggregated payroll and headcount transaction records** a
 
 ### Key Analytical Deliverables:
 * **Data Audit & Cleansing:** Automated Python ETL scripts (Pandas & NumPy).
-* **Relational Data Modeling:** Optimized Star Schema architecture.
-* **Advanced Financial DAX:** Time Intelligence, dynamic KPI measures, and variance modeling.
+* **Financial DAX Measures:** Time Intelligence, dynamic KPI measures, and variance calculations.
 * **Interactive Power BI Dashboard:** Built with a minimal corporate **Navy theme Palette** (`#163F81`).
 * **Strategic Cost Control Insights:** Data-backed recommendations for executive management.
 
@@ -73,15 +74,13 @@ Python Ingestion & Cleansing Layer (Pandas)
 └── Data Validation & Type Casting
 │
 ▼
-Power BI Dimensional Engine (Star Schema)
-├── Fact Table : Fact_WorkforceCost
-├── Dim Tables : Dim_Division, Dim_Category, Dim_Date
-└── Relationships: 1-to-Many (1:*), Single Direction Filter
+Power BI Data Model
+├── Table : fmcg_workforce_cost_dataset
+└── Custom DAX Measures (Total Actual, Total Budget, Variance %, Cost per Headcount)
 │
 ▼
 Analytics & Visualization Layer
-├── Financial DAX Calculation Engine
-├── Field Parameters for Dynamic Metric Toggling
+├── KPI Cards, Line Chart, Pie Chart, Treemap, Pivot Table
 └── Executive Dashboard (Navy Corporate Aesthetic)
 ```
 
@@ -111,51 +110,40 @@ df['Budget_IDR'] = np.where(df['Budget_IDR'] < 0, 0, df['Budget_IDR'])
 df.to_csv('dataset/cleaned_workforce_cost.csv', index=False)
 ```
 
-### 2. Star Schema Data Modeling Topology
-
-* **`Fact_WorkforceCost`**: `Transaction_ID` (PK), `Date` (FK), `Division_ID` (FK), `Category_ID` (FK), `Actual_IDR`, `Budget_IDR`, `Headcount`
-* **`Dim_Division`**: `Division_ID` (PK), `Division_Name`, `Division_Head`, `Operational_Unit`
-* **`Dim_Category`**: `Category_ID` (PK), `Category_Name`, `Expense_Type` (Fixed/Variable)
-* **`Dim_Date`**: `Date` (PK), `Year`, `Month_Name`, `Month_Number`, `Quarter`, `Is_Peak_Month`
-
----
-
-## ⚙️ Core DAX Formulations
-
-### 1. Actual vs. Budget Monetary Variance
+### 2. Core DAX Measures
 
 ```dax
-Actual Expenditure (IDR) = SUM(Fact_WorkforceCost[Actual_IDR])
+Total Actual = SUM(fmcg_workforce_cost_dataset[Actual_IDR])
 
-Budget Allocation (IDR) = SUM(Fact_WorkforceCost[Budget_IDR])
+Total Budget = SUM(fmcg_workforce_cost_dataset[Budget_IDR])
 
-Variance (IDR) = [Actual Expenditure (IDR)] - [Budget Allocation (IDR)]
+Total Variance IDR = [Total Actual] - [Total Budget]
 
-Variance (%) = 
+Variance % = 
 DIVIDE(
-    [Variance (IDR)],
-    [Budget Allocation (IDR)],
+    [Total Variance IDR],
+    [Total Budget],
     0
 )
 ```
 
-### 2. Time Intelligence (Year-Over-Year Expenditure Growth)
+**Time Intelligence (Year-Over-Year Growth):**
 
 ```dax
 Actual YoY Growth (%) = 
-VAR CurrentPeriod = [Actual Expenditure (IDR)]
-VAR PreviousPeriod = CALCULATE([Actual Expenditure (IDR)], SAMEPERIODLASTYEAR('Dim_Date'[Date]))
+VAR CurrentPeriod = [Total Actual]
+VAR PreviousPeriod = CALCULATE([Total Actual], SAMEPERIODLASTYEAR(fmcg_workforce_cost_dataset[Date]))
 RETURN
 DIVIDE(CurrentPeriod - PreviousPeriod, PreviousPeriod, 0)
 ```
 
-### 3. Normalized Cost Per Head (CPH)
+**Cost Per Headcount:**
 
 ```dax
-Cost Per Head (CPH) = 
+Cost per Headcount = 
 DIVIDE(
-    [Actual Expenditure (IDR)],
-    AVERAGE(Fact_WorkforceCost[Headcount]),
+    [Total Actual],
+    AVERAGE(fmcg_workforce_cost_dataset[Headcount]),
     0
 )
 ```
