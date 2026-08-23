@@ -1,5 +1,5 @@
 # 💼 Enterprise People Cost & Workforce Expenditure Analytics (2023–2024)
-### End-to-End HR Cost Control, Data Pipeline & Budget Variance Monitoring System
+### End-to-End HR Cost Control & Budget Variance Analysis
 
 ![Power BI](https://img.shields.io/badge/Power_BI-Dashboard-F2C811?style=flat-square&logo=powerbi&logoColor=black)
 ![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=flat-square&logo=python&logoColor=white)
@@ -8,11 +8,11 @@
 ![People Analytics](https://img.shields.io/badge/People_Analytics-HR-6A4C93?style=flat-square)
 ![HR Analytics](https://img.shields.io/badge/HR_Analytics-Workforce-00A896?style=flat-square)
 ![Star Schema](https://img.shields.io/badge/Star_Schema-Data_Model-073B4C?style=flat-square)
-![ETL Pipeline](https://img.shields.io/badge/ETL_Pipeline-Pandas_%2F_NumPy-F77F00?style=flat-square)
+![Data Cleaning](https://img.shields.io/badge/Data_Cleaning-Pandas_%2F_NumPy-F77F00?style=flat-square)
 ![Dashboard](https://img.shields.io/badge/Dashboard-Executive-118AB2?style=flat-square)
 
 **Repository Name:** `enterprise-people-cost-analytics`
-**Repository Description:** End-to-end People Cost & Workforce Expenditure Analytics platform built with Python & Power BI. Features DAX financial variance modeling, Star Schema data architecture, and executive budget optimization insights across 1,700+ payroll records.
+**Repository Description:** People Cost & Workforce Expenditure Analytics built with Python & Power BI. Features DAX financial variance modeling, Star Schema data modeling, and executive budget optimization insights across 1,700+ payroll records.
 
 ---
 
@@ -62,7 +62,7 @@ Processing over **1,728 aggregated payroll and headcount transaction records** a
 
 ---
 
-## 🏗️ Data Architecture & Pipeline
+## 🏗️ Data Architecture & Workflow
 
 ```text
 Raw Datasets (CSV / Excel)
@@ -92,7 +92,7 @@ Analytics & Visualization Layer
 
 ## 🛠️ Complete Technical Implementation
 
-### 1. Data Processing & ETL Pipeline (Python Script)
+### 1. Data Processing & Cleaning (Python Script)
 
 ```python
 import pandas as pd
