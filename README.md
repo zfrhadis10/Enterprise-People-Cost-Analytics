@@ -11,9 +11,6 @@
 ![Data Cleaning](https://img.shields.io/badge/Data_Cleaning-Pandas_%2F_NumPy-F77F00?style=flat-square)
 ![Dashboard](https://img.shields.io/badge/Dashboard-Executive-118AB2?style=flat-square)
 
-**Repository Name:** `enterprise-people-cost-analytics`
-**Repository Description:** People Cost & Workforce Expenditure Analytics built with Python & Power BI. Features DAX financial variance modeling, Star Schema data modeling, and executive budget optimization insights across 1,700+ payroll records.
-
 ---
 
 ## 🚀 Project Overview
