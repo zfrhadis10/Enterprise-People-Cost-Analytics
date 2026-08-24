@@ -31,11 +31,8 @@ Processing over **1,728 aggregated payroll and headcount transaction records** a
 ## 📊 Interactive Dashboard Preview
 
 <p align="center">
-  <img src="https://github.com/zfrhadis10/Enterprise-People-Cost-Analytics/blob/main/images/dashboard%20preview_1.png" alt="2024 Monthly Workforce Expenditure Trend 1" width="100%">
-</p>
-
-<p align="center">
-  <img src="https://github.com/zfrhadis10/Enterprise-People-Cost-Analytics/blob/main/images/dashboard%20preview_2.png" alt="2024 Monthly Workforce Expenditure Trend 2" width="100%">
+  <img src="https://github.com/zfrhadis10/Enterprise-People-Cost-Analytics/blob/main/images/dashboard%20preview_1.png" alt="Dashboard Preview 1" width="45%">
+  <img src="https://github.com/zfrhadis10/Enterprise-People-Cost-Analytics/blob/main/images/dashboard%20preview_2.png" alt="Dashboard Preview 2" width="45%">
 </p>
 
 <p align="center">
