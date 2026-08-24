@@ -194,10 +194,10 @@ enterprise-people-cost-analytics/
 │
 ├── Workforce_Cost_Analytics.pbix        # Interactive Power BI Report
 ├── FMCG_Workforce_Cost_Notebook.ipynb   # Data Cleaning & Validation Notebook
-├── dataset/
-│   └── fmcg_workforce_cost_dataset.csv  # Synthetic Enterprise Dataset
+├── fmcg_workforce_cost_dataset.csv      # Synthetic Enterprise Dataset
 ├── images/
-│   └── dashboard_preview.png            # High-Res Dashboard Preview
+│   └── dashboard preview_1.png          # High-Res Dashboard Preview
+    └── dashboard preview_2.png
 └── README.md                            # Project Documentation
 ```
 
